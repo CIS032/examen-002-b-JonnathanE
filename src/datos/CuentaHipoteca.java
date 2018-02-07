@@ -20,6 +20,8 @@ public class CuentaHipoteca extends Cuenta {
         super(cliente);
     }
     
+    
+    
     public CuentaHipoteca() {
     }
 

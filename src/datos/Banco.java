@@ -24,6 +24,8 @@ public class Banco {
     }
     
     public static void grabar() {
+        archivo = JOptionPane.showInputDialog(null, "Nombre del Archivo");
+        archivo += ".csv";
         PrintWriter pw = null;
         try {
 	    // Examen002: La ruta y el nombre del 'archivo' debe ser 
@@ -59,6 +61,16 @@ public class Banco {
     public static Cuenta buscarCuentaHipoteca() {
         String nombre = (JOptionPane.showInputDialog(null, "Ingrese nombre", "Verificar Cuenta", JOptionPane.INFORMATION_MESSAGE));
         CuentaHipoteca cuentaAH = new CuentaHipoteca(nombre);
+        Cuenta c=(Cuenta)cuentaAH;
+        if (listaCuenta.contains(c)) {
+            return listaCuenta.get(listaCuenta.indexOf(c));
+        }
+        return null;
+    }
+    
+    public static Cuenta buscarCuentaPrestamo() {
+        String nombre = (JOptionPane.showInputDialog(null, "Ingrese nombre", "Verificar Cuenta", JOptionPane.INFORMATION_MESSAGE));
+        CuentaPrestamo cuentaAH = new CuentaPrestamo(nombre);
         Cuenta c=(Cuenta)cuentaAH;
         if (listaCuenta.contains(c)) {
             return listaCuenta.get(listaCuenta.indexOf(c));
